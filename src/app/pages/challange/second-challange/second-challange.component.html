@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="top-content">
+    <div class="row" style="margin-bottom: 10px">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div class="title">Simple Pricing!</div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div class="sub-title">
+          The most advanced customer support tools with a simple and affordable.
+          and you can always try for 30 days
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row pricing">
+      <div class="col-4" *ngFor="let price of priceList">
+        <mat-card style="max-width: 170px">
+          <mat-card-header>
+            {{ price.header }}
+            <small style="margin-left: 10px" *ngIf="price.subTitle">
+              {{ price.subTitle }}</small
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <div class="price">
+              <span class="currency">{{ currency }}</span>
+              <span class="nominal">{{ price.nominal }}</span>
+              <span class="due-month">{{ dueMonth }}</span>
+            </div>
+            <br />
+            <hr />
+          </mat-card-content>
+          <div class="detail" *ngFor="let detail of price.detail">
+            <p>
+              <b>{{ detail.total }} </b>{{ detail.name }}
+            </p>
+          </div>
+          <div class="buy">
+            <button mat-raised-button color="primary" (click)="onBuy(price)">
+              Buy Now
+            </button>
+            <i
+              *ngIf="selectedPrice == price.header"
+              class="fas fa-check"
+              style="margin-left: 10px"
+            ></i>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-content">
+    <div class="row title-faq">
+      <div class="col">Frequently Asked Questions</div>
+    </div>
+    <div class="row detail-faq">
+      <div class="col-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        sit amet nibh non dolor pellentesque efficitur vestibulum et orci.
+        Quisque ut arcu et nisi bibendum luctus.
+      </div>
+      <div class="col-6">
+        Suspendisse viverra diam vitae nunc imperdiet, ut volutpat turpis
+        faucibus. Morbi non nisi a lectus blandit mattis non vel lacus.
+        Phasellus vitae mi quis lacus ullamcorper ultricies.
+      </div>
+    </div>
+  </div>
+</div>

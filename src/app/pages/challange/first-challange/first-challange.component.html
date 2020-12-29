@@ -1,0 +1,62 @@
+<div class="container">
+  <mat-card *ngFor="let item of items">
+    <mat-card-header *ngIf="item.header">
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{ item.headerTitle }} </mat-card-title>
+      <mat-card-subtitle>{{ item.headerSubTitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-title *ngIf="item.title"> {{ item.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="item.subTitle">{{
+      item.subTitle
+    }}</mat-card-subtitle>
+    <img mat-card-image src="{{ item.img }}" />
+    <mat-card-content *ngIf="item.hasContent">
+      <p>{{ item.content }}</p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="item.hasAction">
+      <div *ngIf="item.action.icon; else exportButton" style="text-align: end">
+        <i class="fa fa-heart"></i>
+        <i class="fas fa-bookmark"></i>
+        <i class="fa fa-map-marker"></i>
+      </div>
+      <ng-template #exportButton>
+        <button mat-button color="primary" (click)="onExport(item)">
+          {{ item.action.export }}
+        </button>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #detailContent>
+  <mat-card-header *ngIf="detailItem.header">
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{ detailItem.headerTitle }}</mat-card-title>
+    <mat-card-subtitle>{{ detailItem.headerSubTitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-title *ngIf="detailItem.title">
+    {{ detailItem.title }}</mat-card-title
+  >
+  <mat-card-subtitle *ngIf="detailItem.subTitle">{{
+    detailItem.subTitle
+  }}</mat-card-subtitle>
+  <img mat-card-image src="{{ detailItem.img }}" />
+  <mat-card-content *ngIf="detailItem.hasContent">
+    <p>{{ detailItem.content }}</p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="detailItem.hasAction">
+    <div
+      *ngIf="detailItem.action.icon; else exportButton"
+      style="text-align: end"
+    >
+      <i class="fa fa-heart"></i>
+      <i class="fas fa-bookmark"></i>
+      <i class="fa fa-map-marker"></i>
+    </div>
+    <ng-template #exportButton>
+      <button [disabled]="true" mat-button color="primary">
+        {{ detailItem.action.export }}
+      </button>
+    </ng-template>
+  </mat-card-actions>
+</ng-template>

@@ -1,0 +1,20 @@
+@import "../../../assets/variables.scss";
+
+.welcome-card {
+  background: $accent-gradient !important;
+  color: white;
+  margin-bottom: 24px;
+  min-height: 200px;
+}
+.title {
+  font-size: 2rem;
+  padding-top: 40px;
+  text-align: center;
+  min-height: 200px;
+  color: #fcedd8;
+  background: $accent-gradient !important;
+  font-family: "Niconne", cursive;
+  font-weight: 700;
+  text-shadow: 5px 5px 0px map-get($primary, 500),
+    10px 10px 0px map-get($accent, 500);
+}

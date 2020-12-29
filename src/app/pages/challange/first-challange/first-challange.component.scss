@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-flow: row;
+  .mat-card {
+    display: table !important;
+    margin: 10px;
+    .header-image {
+      background-image: url("https://cdnb.artstation.com/p/assets/images/images/018/510/759/large/gonza-de-la-rosa-king-poster.jpg?1559658447");
+      background-size: cover;
+    }
+    i {
+      text-align: right;
+      margin: 4px;
+    }
+  }
+}
