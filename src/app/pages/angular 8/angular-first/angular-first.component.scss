@@ -1,0 +1,46 @@
+@import "../../../../assets/variables.scss";
+.container {
+  .error {
+    color: $red;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .mat-card {
+      margin: 5px;
+      max-width: 198px;
+    }
+    .img-container {
+      .mat-card-image {
+        width: 100%;
+        margin: 0 !important;
+        padding: 10px;
+      }
+    }
+    .content-container {
+      text-align: center;
+    }
+    .action-container {
+      padding: 15px;
+      .mat-icon {
+        margin-right: 6px;
+      }
+    }
+  }
+  .checkout-content {
+    .mat-expansion-panel-header-description {
+      flex-grow: 0;
+    }
+    .list-items {
+      padding: 10px;
+    }
+    .no-content {
+      padding: 10px;
+      text-align: center;
+    }
+    .custom-padding {
+      padding: 10px 0 0 0 !important;
+    }
+  }
+}

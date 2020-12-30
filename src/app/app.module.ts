@@ -8,6 +8,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +27,13 @@ import { ThirdChallangeComponent } from './pages/challange/third-challange/third
 import { AngularFirstComponent } from './pages/angular 8/angular-first/angular-first.component';
 import { AngularSecondComponent } from './pages/angular 8/angular-second/angular-second.component';
 import { AngularThirdComponent } from './pages/angular 8/angular-third/angular-third.component';
+import { ItemListComponent } from './pages/angular 8/angular-first/services/junior-data';
+import { PlaylistComponent } from './pages/angular 8/angular-second/services/intermediate-data';
+import { AddPlaylistComponent } from './pages/angular 8/angular-second/add-playlist/add-playlist.component';
+import { EditPlaylistComponent } from './pages/angular 8/angular-second/edit-playlist/edit-playlist.component';
+import { OrdersComponent } from './pages/angular 8/angular-third/services/advanced-data';
+import { AddOrderComponent } from './pages/angular 8/angular-third/add-order/add-order.component';
+import { EditOrderComponent } from './pages/angular 8/angular-third/edit-order/edit-order.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +48,10 @@ import { AngularThirdComponent } from './pages/angular 8/angular-third/angular-t
     AngularFirstComponent,
     AngularSecondComponent,
     AngularThirdComponent,
+    AddPlaylistComponent,
+    EditPlaylistComponent,
+    AddOrderComponent,
+    EditOrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,9 +65,20 @@ import { AngularThirdComponent } from './pages/angular 8/angular-third/angular-t
     MatButtonModule,
     MatDialogModule,
     MatDividerModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatTooltipModule,
+    ReactiveFormsModule,
+    MatSelectModule,
   ],
-  entryComponents: [FirstChallangeComponent],
-  providers: [],
+  entryComponents: [
+    FirstChallangeComponent,
+    AddPlaylistComponent,
+    EditPlaylistComponent,
+    AddOrderComponent,
+    EditOrderComponent,
+  ],
+  providers: [ItemListComponent, PlaylistComponent, OrdersComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,1 +1,95 @@
-<p>angular-first works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1 class="mat-h1">Beginner Merchant</h1>
+    </div>
+    <div class="col-4">
+      <span *ngIf="availableGold > 0; else otherValues"
+        >Available Gold: {{ availableGold }}$</span
+      >
+      <ng-template #otherValues>
+        <span class="error">You dont have any gold left</span>
+      </ng-template>
+    </div>
+  </div>
+  <div class="main-content">
+    <mat-card *ngFor="let item of items">
+      <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-subtitle>Price: {{ item.price }}</mat-card-subtitle>
+      </mat-card-header>
+      <div class="img-container">
+        <img mat-card-image src="{{ item.image }}}" />
+      </div>
+      <div class="content-container">
+        <div class="content">
+          {{ item.desc }}
+        </div>
+      </div>
+      <div class="action-container">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onAddCart(item)"
+          *ngIf="item.addedToCart == false; else addedCart"
+        >
+          <mat-icon>add_shopping_cart</mat-icon>
+          <span>Add to cart</span>
+        </button>
+        <ng-template #addedCart>
+          <button mat-raised-button color="accent" (click)="onAddCart(item)">
+            <mat-icon>add_shopping_cart</mat-icon>
+            <span>Added to cart</span>
+          </button>
+        </ng-template>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="checkout-content">
+    <div class="row">
+      <div class="col-12">
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>Total</mat-panel-title>
+            <mat-panel-description
+              style="text-align: end"
+              *ngIf="totalItems <= 0; else hasItem"
+            >
+              You dont have any item in cart
+            </mat-panel-description>
+            <ng-template #hasItem>
+              <mat-panel-description style="text-align: end">
+                {{ totalItems }} items with
+                {{ totalPrices }} $</mat-panel-description
+              >
+            </ng-template>
+          </mat-expansion-panel-header>
+          <div class="no-content" *ngIf="selectedItems.length <= 0">
+            Empty Cart
+          </div>
+          <div class="list-items" *ngFor="let selected of selectedItems">
+            <div class="row">
+              <div class="col-5">
+                {{ selected.name }}
+              </div>
+              <div class="col-5" style="text-align: end">
+                {{ selected.price }} $
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 custom-padding" style="text-align: end">
+              <button mat-raised-button (click)="onBuy()" color="primary">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+</div>

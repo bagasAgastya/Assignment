@@ -13,26 +13,26 @@ export interface Song {
 }
 
 export class PlaylistComponent {
-
   // use this data as the mock data for the app
   playlists: Playlist[] = [
     {
       name: 'Kopikustik',
       totalDuration: 5,
       totalSongs: 2,
-      description: 'More than a coffee, this is all of your favorite accoustic songs.',
+      description:
+        'More than a coffee, this is all of your favorite accoustic songs.',
       songs: [
         {
           title: 'Cigarettes of ours',
           artist: 'Ardhito Pramono',
-          duration: 3
+          duration: 3,
         },
         {
           title: 'Walking Back Home',
           artist: 'Vira Talisa',
-          duration: 2
+          duration: 2,
         },
-      ]
+      ],
     },
     {
       name: 'Anime Hits',
@@ -43,19 +43,23 @@ export class PlaylistComponent {
         {
           title: 'Renai Circulation',
           artist: 'Kana Hanazawa',
-          duration: 4
+          duration: 4,
         },
         {
           title: 'Platinum Disco',
           artist: 'Tsukihi Phoenix',
-          duration: 4
+          duration: 4,
         },
         {
           title: 'Silhouette',
           artist: 'KANA-BOON',
-          duration: 5
+          duration: 5,
         },
-      ]
-    }
+      ],
+    },
   ];
+
+  getPlaylist() {
+    return this.playlists;
+  }
 }

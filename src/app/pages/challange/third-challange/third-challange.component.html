@@ -1,1 +1,87 @@
-<p>third-challange works!</p>
+<div class="container">
+  <mat-card>
+    <div class="header">
+      <div class="row">
+        <div class="col-8">
+          <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title class="title"
+              ><b>King</b> posted on your timeline</mat-card-title
+            >
+            <mat-card-subtitle>32 minutes ago</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+        <div class="col-4" style="text-align: end">
+          <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <mat-card-subtitle
+          >Remember my lost dog we talking about the other night? Found
+          it!</mat-card-subtitle
+        >
+      </div>
+    </div>
+    <div class="img-container">
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+    </div>
+    <div class="action">
+      <i class="fa fa-heart" (click)="likeClicked()"></i>
+      <span class="text-action"
+        >Like<small *ngIf="countLike > 0"> ({{ countLike }})</small>
+      </span>
+      <i
+        class="fa fa-share-alt"
+        style="margin-left: 6px"
+        (click)="shareClicked()"
+      ></i>
+      <span class="text-action"
+        >Share<small *ngIf="countShare > 0"> ({{ countShare }})</small>
+      </span>
+    </div>
+    <mat-card-footer class="comment-section">
+      <div class="title">1 comments <i class="fa fa-angle-down"></i></div>
+      <div class="row comment">
+        <div class="col">
+          <mat-card-header>
+            <div mat-card-avatar class="person-image"></div>
+            <div class="title">
+              Saitama <small>December, 30 2020</small>
+              <p>
+                Glad to hear it!, Neque porro quisquam est qui dolorem ipsum
+                quia dolor sit amet, consectetur, adipisci velit...
+                <br />
+              </p>
+              <a mat-button><span>Reply </span> <i class="far fa-flag"></i></a>
+            </div>
+          </mat-card-header>
+        </div>
+      </div>
+
+      <div class="row post-comment">
+        <div class="col">
+          <mat-card-header>
+            <div mat-card-avatar class="person-image"></div>
+            <div class="title">
+              <textarea
+                class="form-control"
+                rows="3"
+                cols="70"
+                placeholder="Add your comments..."
+              ></textarea>
+            </div>
+          </mat-card-header>
+        </div>
+      </div>
+      <div class="button-post-comment">
+        <button mat-raised-button color="primary">Post Comment</button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div>

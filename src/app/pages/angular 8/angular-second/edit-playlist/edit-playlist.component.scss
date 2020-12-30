@@ -1,0 +1,17 @@
+.container {
+  .inline-control {
+    display: flex;
+    justify-content: space-between;
+
+    > .input {
+      width: calc(100% - 48px);
+    }
+
+    > button {
+      height: 40px;
+      padding: 0 8px;
+      margin: 4px 0 0 8px;
+      min-width: 40px;
+    }
+  }
+}

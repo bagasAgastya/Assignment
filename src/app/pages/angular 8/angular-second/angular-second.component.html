@@ -1,1 +1,68 @@
-<p>angular-second works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="mat-h1">Playlist</h1>
+    </div>
+    <div class="col-6" style="text-align: end">
+      <button mat-raised-button color="primary" (click)="addNewPlaylist()">
+        <mat-icon style="margin-right: 6px">playlist_add</mat-icon>
+        <span>New Playlist</span>
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <div *ngIf="playlist.length <= 0" style="text-align: center">
+      <mat-card>
+        <h1 class="mat-h1">No Playlist Found</h1>
+        <h3>Add some playlist using new playlist button above!!</h3>
+      </mat-card>
+    </div>
+    <mat-card *ngFor="let item of playlist" style="margin-bottom: 5px">
+      <div class="row">
+        <div class="col-6">
+          <mat-card-title>{{ item.name }}</mat-card-title>
+          <mat-card-subtitle
+            >total {{ item.totalSongs }} songs,
+            {{ item.totalDuration }} minutes</mat-card-subtitle
+          >
+        </div>
+        <div class="col-6" style="text-align: end">
+          <button
+            mat-mini-fab
+            (click)="deletePlaylist(item)"
+            color="warn"
+            style="margin-right: 6px"
+            matTooltip="Delete"
+          >
+            <mat-icon>remove_circle_outline</mat-icon>
+          </button>
+          <button
+            (click)="editPlaylist(item)"
+            mat-mini-fab
+            color="accent"
+            matTooltip="Edit"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 6px">
+        <div class="col-12">
+          <h4>{{ item.description }}</h4>
+        </div>
+      </div>
+      <hr />
+      <mat-card-content>
+        <div class="row list-song" *ngFor="let song of item.songs">
+          <div class="col-2">
+            <mat-icon>music_note</mat-icon>
+          </div>
+          <div class="col-10">
+            <span>{{ song.title }}</span> <br />
+            <span>{{ song.artist }} - {{ song.duration }} minutes</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

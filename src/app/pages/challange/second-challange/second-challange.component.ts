@@ -46,8 +46,11 @@ export class SecondChallangeComponent implements OnInit {
     ];
   }
 
-  onBuy(price) {
-    this.selectedPrice = price.header;
+  onBuy() {
     Swal.fire('Congratulation!', 'You buy our service!', 'success');
+  }
+
+  selectCard(price) {
+    this.selectedPrice = price.header;
   }
 }

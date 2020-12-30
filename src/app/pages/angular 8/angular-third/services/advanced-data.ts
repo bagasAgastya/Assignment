@@ -12,7 +12,6 @@ export interface Item {
 }
 
 export class OrdersComponent {
-
   // use this data as mock data for the app
   orders: Order[] = [
     {
@@ -23,14 +22,14 @@ export class OrdersComponent {
         {
           category: 'CPU',
           name: 'AMD Ryzen 5 2600',
-          price: 117
+          price: 117,
         },
         {
           category: 'Motherboard',
           name: 'MSI PRO Z390-A',
-          price: 129
+          price: 129,
         },
-      ]
+      ],
     },
     {
       totalPrice: 306,
@@ -40,14 +39,14 @@ export class OrdersComponent {
         {
           category: 'Video Card',
           name: 'ZOTAC GeForce GTX 1060',
-          price: 209
+          price: 209,
         },
         {
           category: 'Memory',
           name: 'CORSAIR Vengeance RGB Pro 16GB',
-          price: 97
+          price: 97,
         },
-      ]
+      ],
     },
   ];
 
@@ -76,4 +75,28 @@ export class OrdersComponent {
     { category: 'Memory', name: 'G.SKILL TridentZ RGB Series 16GB', price: 86 },
     { category: 'Memory', name: 'G.SKILL Ripjaws Series 8GB', price: 42 },
   ];
+
+  getOrders() {
+    return this.orders;
+  }
+
+  getCategories() {
+    return this.categories;
+  }
+
+  getCPUList() {
+    return this.cpuList;
+  }
+
+  getMotherBoardList() {
+    return this.motherBoardList;
+  }
+
+  getVideoCardList() {
+    return this.videoCardList;
+  }
+
+  getMemoryList() {
+    return this.memoryList;
+  }
 }
