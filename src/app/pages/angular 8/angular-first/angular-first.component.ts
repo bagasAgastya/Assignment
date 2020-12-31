@@ -27,7 +27,9 @@ export class AngularFirstComponent implements OnInit {
         (i) => i.name !== item.name
       );
     this.totalPrices = this.calculatePrice(this.selectedItems);
-    this.availableGold -= this.totalPrices;
+    const totalGold = 1000;
+    const dividen = totalGold - this.totalPrices;
+    this.availableGold = dividen > 0 ? dividen : 0;
     this.totalItems = this.selectedItems.length;
     const foundIndex = this.items.findIndex((x) => x.name == item.name);
     item.addedToCart = !item.addedToCart;
@@ -77,5 +79,6 @@ export class AngularFirstComponent implements OnInit {
     this.selectedItems = [];
     this.totalPrices = 0;
     this.totalItems = 0;
+    this.availableGold = 1000;
   }
 }

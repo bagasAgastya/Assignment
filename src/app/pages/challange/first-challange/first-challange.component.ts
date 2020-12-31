@@ -69,6 +69,9 @@ export class FirstChallangeComponent implements OnInit {
 
   onExport(item) {
     this.detailItem = item;
-    this.dialog.open(this.detailContent);
+    this.dialog.open(this.detailContent, {
+      maxWidth: '90vh',
+      maxHeight: '90vh',
+    });
   }
 }

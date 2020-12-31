@@ -83,8 +83,8 @@
                 mat-mini-fab
                 color="primary"
                 *ngIf="
-                  this.editForm.get('items')['controls'][
-                    this.editForm.get('items')['controls'].length - 1
+                  editForm.get('items')['controls'][
+                    editForm.get('items')['controls'].length - 1
                   ] == allItem
                 "
                 (click)="onAddOrderForm()"

@@ -48,8 +48,8 @@
                 mat-mini-fab
                 color="primary"
                 *ngIf="
-                  this.addForm.get('songs')['controls'][
-                    this.addForm.get('songs')['controls'].length - 1
+                  addForm.get('songs')['controls'][
+                    addForm.get('songs')['controls'].length - 1
                   ] == song
                 "
                 (click)="onAddSongForm()"

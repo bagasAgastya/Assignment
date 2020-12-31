@@ -48,6 +48,11 @@
                 style="margin-right: 6px"
                 type="button"
                 mat-mini-fab
+                *ngIf="
+                  editForm.get('songs')['controls'][
+                    editForm.get('songs')['controls'].length - 1
+                  ] == song
+                "
                 color="primary"
                 (click)="onAddSongForm()"
               >
